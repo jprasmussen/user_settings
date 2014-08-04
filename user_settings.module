@@ -1,0 +1,18 @@
+<?php
+
+function user_settings_permission() {
+  return array(
+    'administer user configuration' => array(
+      'title' => t('Administer User Account Configuration')
+    )
+  );
+}
+
+function user_settings_menu_alter(&$items) {
+  foreach ($items as $path => &$item) {
+    if (strpos($path, 'admin/config/people') === 0) {
+      $item['access callback'] = 'user_access';
+      $item['access arguments'] = array('administer user configuration');
+    }
+  }
+}

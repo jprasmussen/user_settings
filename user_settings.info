@@ -1,0 +1,5 @@
+name = User Account Settings
+description = Adds permission to access the User Account Settings page.
+version = "7.x-1.0"
+core = 7.x
+package = "Administration"
